@@ -71,7 +71,7 @@ class TaskControllerTest {
     void deletesExistingTask() throws Exception {
         long id = createTask("Remove");
         mvc.perform(delete("/tasks/" + id)).andExpect(status().isNoContent());
-        mvc.perform(get("/tasks/" + id)).andExpect(status().isNotFound());
+        mvc.perform(delete("/tasks/" + id)).andExpect(status().isNotFound());
     }
 
     @Test
