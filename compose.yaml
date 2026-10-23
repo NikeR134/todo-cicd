@@ -1,0 +1,7 @@
+services:
+  todo:
+    image: ${IMAGE:-ghcr.io/OWNER/todo-cicd:latest}
+    container_name: todo
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
